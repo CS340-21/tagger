@@ -105,7 +105,7 @@ The website will host everything, making it highly portable. The website will ha
 
     - What is a high-level block diagram of the architecture of the system?
 
-
+![image](https://github.com/CS340-21/tagger/blob/master/Screenshot_20210211_144540.png?raw=true)
 
 
     - What is a minimal system that would have some value to the customer?
