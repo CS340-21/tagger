@@ -16,7 +16,7 @@ Team Tagger
 
   - Team name for GitHub
 
-Tagger
+# Tagger
 
   - Team members
 
