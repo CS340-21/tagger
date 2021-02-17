@@ -20,10 +20,10 @@ Taylor: Basic knowledge of SQL, HTML, and CSS. No experience building an app, bu
 ### Primary Customer
 The primary customer of this application is a baseball coach. Since our solution is designed specifically with scrimmage-style scenarios in mind, teams that utilize the preseason for development will be more inclined to use this. Collegiate baseball coaches will be our largest customers, including those at junior colleges and all four-year institutions. These coaches desire software that grants them the flexibility to effectively keep statistics on intrasquad scrimmages. Current tagging software is not capable of easily splitting a roster, which is important for ease of tagging intrasquad scrimmages. There is also a lack of flexibility in setting up the start of a match, i.e. having a smaller starting line-up. There is an existing market, and there are two established competitors. This software will not entirely replace either of these, but works more as a supplementary application.
 ### Proposed Solution
-Customers will be able to easily keep score during baseball intra-squads. This app, unlike others, will deliver users the ability to split a single roster, begin a half inning with a number of outs and/or ghost runners, and take other scrimmage-style situations into account. Customers will greatly benefit from the increased flexibility provided by our application. Stats from scrimmages and other pre-season practices are important to a team's development. Our solution enables customers to track these things accurately and easily. Current shortcomings in the market discourage coaches from tracking these stats, so team development has been limited. Development will be improved with the ability to effectively keep score with our solution. The app will be much more flexible than traditional scorekeeping applications for baseball. Flexibility in rosters and situations will make tagging scrimmages much more efficient. 
+Customers will be able to easily keep score during baseball intra-squads. This app, unlike others, will deliver users the ability to split a single roster, begin a half inning with a number of outs and/or ghost runners, and take other scrimmage-style situations into account. Customers will greatly benefit from the increased flexibility provided by our application. Stats from scrimmages and other pre-season practices are important to a team's development. Our solution enables customers to track these things accurately and easily. Current shortcomings in the market discourage coaches from tracking these stats, so team development has been limited. Development will be improved with the ability to effectively keep score with our solution. The app will be much more flexible than traditional scorekeeping applications for baseball. Flexibility in rosters and situations will make tagging scrimmages much more efficient.
 ### Measure of Success
 The idea of our solution has been discussed with a collegiate baseball coach, who originally expressed discontent with current software. He seems excited about the proposed solution. We will get user opinions from short, optional feedback surveys sent out to users within the app. We will ask the customer to rate on a scale of 1-10 how much they agree with statements like &quot;it is easy to find options for pitch results,&quot; much like faculty feedback surveys at UT. We will also be able to get the opinion of the mentioned coach on how the app compares with existing ones.
-  
+
 # Proposed Solution & Technology
 ### The Ideal System
 The software will keep track of everything that happens during a scrimmage and what time-stamp it happened at, storing everything in SQL tables. The user will input each pitch, whether it was hit or not, and if it was, what kind of ball it was. The user will also input what base the hitter made it to, and will progress runners on the bases throughout the game. These inputs will be with simple buttons within submenus for each category (pitch, ball, etc.). The software will save the game's tags to be viewed again later. The website will host everything, making it highly portable. The website will have the ability to start a new game, enter rosters (or choose from existing rosters), and start tagging. It will also have accounts so the user can move their data from one device to another. Each game will use an SQL table to store tags and scores.
@@ -35,78 +35,22 @@ A minimal system that would remain valuable to the customer includes significant
 We can test the app in the environment in which it was made for, since we have access to a baseball team doing actual intrasquad scrimmages.
 ### Tools for Building
 We plan to use Django, which is a Python-based web framework. Using a web application will make it more portable. We also plan to use SQL to build our database for rosters and tagging data. In addition to Django, we could use react to help with our front-end.
-- Section 3: Proposed solution and technology
-  - System- technology we deliver
-    - From the developer's POV, what will our software do?
 
-The software will keep track of everything that happens during a scrimmage and what time-stamp it happened at, storing everything in SQL tables. The user will input each pitch, whether it was hit or not, and if it was, what kind of ball it was. The user will also input what base the hitter made it to, and will progress runners on the bases throughout the game. These inputs will be with simple buttons within submenus for each category (pitch, ball, etc.). The software will save the game's tags to be viewed again later.
+# Our Team
+Since only one member (Sam) has built an app before, though not related to baseball, so the tools are generally new to everyone.
+### Roles
+Taylor: I don't mind taking notes at meetings and on our progress and things. Also, I will be in regular communication with the UT Baseball coaches, so I can discuss our project with them. The other Video/Scouting Managers are business analytics majors, so if we have questions about database stuff, I can talk to them.
 
-    - What are the main components of your system? What do they do?
+Brandan: UI design, in addition to helping with whatever else needs to be done
 
-The website will host everything, making it highly portable. The website will have the ability to start a new game, enter rosters (or choose from existing rosters), and start tagging. It will also have accounts so the user can move their data from one device to another. Each game will use an SQL table to store tags and scores.
+Rob: Create SQL database and interface with Django backend
 
-    - What is a high-level block diagram of the architecture of the system?
+Sam: Work on Django backend organization + whatever else needs to be done.
 
-![image](https://github.com/CS340-21/tagger/blob/master/Screenshot_20210211_144540.png?raw=true)
+**The roles will be relatively fixed, since it would be easier for us to learn one tool and stick with it than to learn multiple.**
 
-
-    - What is a minimal system that would have some value to the customer?
-
-A minimal system that would remain valuable to the customer includes significant flexibility for intrasquad and scrimmage-style situations. Since there are widespread scorekeeping applications for traditional games, the most vital part of our system is its flexibility.
-
-    - What are some possible enhancements that customers would value?
-
-Possible enhancements for our scorekeeping application include the ability for others to livestream games.
-
-    - How will we test our system?
-
-We can test the app in the environment in which it was made for, since we have access to a baseball team doing actual intrasquad scrimmages.
-
-  - Tools- technology we use to build what we deliver
-    - What will we use to build the system?
-
-We plan to use Django, which is a Python-based web framework. Using a web application will make it more portable. We also plan to use SQL to build our database for rosters and tagging data.
-
-    - Are there available tools we can leverage?
-
-In addition to Django, we could use react to help with our front-end
-
-- Section 4: Team
-  - Skills
-    - Has anyone on the team built something like this before?
-
-Only one member (Sam) has built an app before, though not related to baseball.
-
-    - Are the tools known or new to the team?
-
-The tools are generally new to everyone except Sam.
-
-  - Roles
-    - What are the roles of the team members?
-
-Taylor - I don't mind taking notes at meetings and on our progress and things. Also, I will be in regular communication with the UT Baseball coaches, so I can discuss our project with them. The other Video/Scouting Managers are business analytics majors, so if we have questions about database stuff, I can talk to them.
-
-Brandan - UI design, in addition to helping with whatever else needs to be done
-
-Rob - Create SQL database and interface with Django backend
-
-Sam - Work on Django backend organization + whatever else needs to be done.
-
-    - Will the roles be fixed or rotating?
-
-Rotating
-
-- Section 5: Project management
-  - Schedule
-    - Is completion feasible?
-
-_ **Hopefully** _
-
-    - When and how often will we meet?
-
-2-3 times weekly depending on progress.
-
-    - Write a tentative weekly schedule with tasks and deadlines
+# Project Management
+We will meet roughly 2-3 times weekly depending on our progress. This is subject to change if we have not met our goals. Below is a tentative project time line:
 
 | Date | Deadline |
 | --- | --- |
@@ -125,29 +69,14 @@ _ **Hopefully** _
 | 4/15 | Complete project implementation. At this stage we might hand off our app to the UT baseball team. |
 >>>>>>> 2a0ea15 (edited timeline)
 
-  - Constraints
-    - Are there regulatory or legal constraints?
-      - Must include copyright license for Django somewhere in source code. (same probably goes for any additional API we use)
-    - Are there ethical or societal concerns?
+### Constraints
+There are few legal constraints to this project. Of course, we must include the copyright license for Django somewhere in source code, as well as any other free tools we use. There are no ethical concerns that we need to worry about.
+### Data
+We will have all the access to the data that we need. The data that the app uses will be manually input by the user. We could add a feature later that enables users to upload stats that were not directly kept through the app, but that could be a later consideration.
+### Minimum Functionality
+Cutting a few of the more complex features would still leave a functional application, however, it will not be useful if it does not add the desired increased flexibility or address the shortcomings of the competitors.
 
-No
-
-  - Resources
-    - Will we have access to the data we need?
-
-Yes, the data that the app uses will be manually input by the user. We could add a feature later that enables users to upload stats that were not directly kept through the app, but that could be a later consideration.
-
-  - Descoping
-    - What happens if full functionality cannot be implemented?
-      - Will reduced functionality operate?
-
-Yes, cutting a few of the more complex features would still leave a functional application.
-
-      - Will it be useful (or at least partially solving the problem)?
-
-However, it will not be useful in that it does not add the desired increased flexibility / address the shortcomings of the competitors.
-
-Notes from UT Baseball Coach Sean McCann:
+#Notes from UT Baseball Coach Sean McCann:
 
 - Overview of current software
   - iScore and GameChanger are two widely used scorekeeping apps for multiple sports, including baseball. Used at all levels - youth through professional sports.
