@@ -75,13 +75,13 @@ Cutting a few of the more complex features would still leave a functional applic
 
 # Notes from UT Baseball Coach Sean McCann:
 
-- Overview of current software
-  - iScore and GameChanger are two widely used scorekeeping apps for multiple sports, including baseball. Used at all levels - youth through professional sports.
-  - In baseball, an individual follows the game and enters information from each pitch (and every ball put in play). After the game, a complete list of statistics from the game is available - a box score as well as individual and team stats. As each game is added, the apps combine the information to create cumulative (season) stats for each team scored - usually one team along with all their opponents.
-  - These are both excellent apps with corresponding web app platforms that make scoring and tracking a team's stats easier than the old paper and pencil method, especially when creating cumulative stat rundowns and specialized reports.
-- Shortcomings and areas for improvement
-  - Unfortunately, these apps do not work when a team is involved in an intrasquad scrimmage season, essentially playing themselves in a practice or showcase situation (college fall/pre-spring, high school-aged fall/summer, MLB spring training).
-  - The reasons these apps do not work for intrasquad scrimmage:
-    - 1) the user cannot split the roster (ex: Yankees vs. Yankees). In particular, the constant juggling of the team's roster playing itself, its rarely ever the same, so tremendous flexibility is needed;
-    - 2) there is no flexibility for standard scrimmage rules - less/more than 9 in a line-up, starting innings with a different number of outs (ex: 1 out), starting innings with ghost runners on base, starting at-bats with a count other than 0-0 (1-0, 3-2, etc.).
-  - If there were an app that allowed for all of the scorekeeping and subsequent cumulative reporting of stats PLUS the ability to have intrasquad scrimmage flexibility, it would be the only known one in a market that, albeit not near the size GameChanger and iScore compete in, but easily in the 10,000+ range (colleges would be the biggest market - JUCO and all levels of 4-year schools).
+### Overview of current software
+- iScore and GameChanger are two widely used scorekeeping apps for multiple sports, including baseball. Used at all levels - youth through professional sports.
+- In baseball, an individual follows the game and enters information from each pitch (and every ball put in play). After the game, a complete list of statistics from the game is available - a box score as well as individual and team stats. As each game is added, the apps combine the information to create cumulative (season) stats for each team scored - usually one team along with all their opponents.
+- These are both excellent apps with corresponding web app platforms that make scoring and tracking a team's stats easier than the old paper and pencil method, especially when creating cumulative stat rundowns and specialized reports.
+### Shortcomings and areas for improvement
+- Unfortunately, these apps do not work when a team is involved in an intrasquad scrimmage season, essentially playing themselves in a practice or showcase situation (college fall/pre-spring, high school-aged fall/summer, MLB spring training).
+- The reasons these apps do not work for intrasquad scrimmage:
+  - 1) the user cannot split the roster (ex: Yankees vs. Yankees). In particular, the constant juggling of the team's roster playing itself, its rarely ever the same, so tremendous flexibility is needed;
+  - 2) there is no flexibility for standard scrimmage rules - less/more than 9 in a line-up, starting innings with a different number of outs (ex: 1 out), starting innings with ghost runners on base, starting at-bats with a count other than 0-0 (1-0, 3-2, etc.).
+- If there were an app that allowed for all of the scorekeeping and subsequent cumulative reporting of stats PLUS the ability to have intrasquad scrimmage flexibility, it would be the only known one in a market that, albeit not near the size GameChanger and iScore compete in, but easily in the 10,000+ range (colleges would be the biggest market - JUCO and all levels of 4-year schools).
