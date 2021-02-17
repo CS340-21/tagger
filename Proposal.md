@@ -1,31 +1,24 @@
-﻿Dates relevant to the proposal:
-
-- Thursday, 2/11 - Write and present a preliminary proposal
-- Thursday, 2/18 - Revise proposal
-
-Proposal outline:
-
-- Heading
-  - Descriptive title
-
-EZScore
-
-  - Team name
-
-Team Tagger
-
-  - Team name for GitHub
-
 # Tagger
 
-  - Team members
+Team members
 
-Sam Baumann, Rob Bray, Brandan Roachell, Taylor Rogers
+  - Sam Baumann, Rob Bray, Brandan Roachell, Taylor Rogers
 
-- Section 1: Intro
+# Introduction
+This project is a baseball tagger, which is a scorekeeping application for baseball coaches. The main taggers currently competing on the market both have the same limited flexibility. This project idea is not novel, but it fills the need of the market by introducing more flexibility within the app that competitors lack, such as splitting rosters. It resembles iScore and GameChanger, two widely used scorekeeping apps for multiple sports, including baseball. This app will be different as it will focus on baseball and provide options for tagging intrasquad scrimmages.
+
+### Team Background
+Sam: Have experience with Django and other web development tools such as HTML/CSS/JS.
+
+Rob: Basic knowledge of SQL, new to Python and web development.
+
+Brandan: I have some background with website development and a little bit with database management. Never used Python before.
+
+Taylor: Basic knowledge of SQL, HTML, and CSS. No experience building an app, but experience with baseball scoring software.
+
   - What is the project?
 
-A baseball tagger--a scorekeeping application for baseball coaches
+    A baseball tagger--a scorekeeping application for baseball coaches
 
   - What is the motivation?
 
