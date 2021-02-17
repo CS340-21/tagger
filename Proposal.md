@@ -76,7 +76,7 @@ We will have all the access to the data that we need. The data that the app uses
 ### Minimum Functionality
 Cutting a few of the more complex features would still leave a functional application, however, it will not be useful if it does not add the desired increased flexibility or address the shortcomings of the competitors.
 
-#Notes from UT Baseball Coach Sean McCann:
+# Notes from UT Baseball Coach Sean McCann:
 
 - Overview of current software
   - iScore and GameChanger are two widely used scorekeeping apps for multiple sports, including baseball. Used at all levels - youth through professional sports.
