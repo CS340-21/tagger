@@ -112,11 +112,18 @@ _ **Hopefully** _
 | --- | --- |
 | 2/11 | Preliminary project proposal |
 | 2/18 | Revised proposal |
+<<<<<<< HEAD
 | 3/4 | Design and implement a minimum viable system. A minimum viable system for this project might be a tagging system that can function on the front-end, without any special features, also write first report |
 | 3/11 | Continue adding features and begin testing |
 | 3/18 | Add features to the system. (some features to add at this stage could be custom starting scores and saved account information). Write second status report. |
 | 4/1 | Refine system and test. At this stage, we will run many tests (possibly by watching baseball games and using our app to do scorekeeping). Write third status report |
 | 4/15 | Complete project implementation. At this stage we might hand off our app to the UT baseball team. Write final report |
+=======
+| 3/4 | Design and implement a minimum viable system. A minimum viable system for this project might be a tagging system that can function on the front-end, without any special features |
+| 3/18 | Add features to the system. (some features to add at this stage could be custom starting scores and saved account information) |
+| 4/1 | Refine system and test. At this stage, we will run many tests (possibly by watching baseball games and using our app to do scorekeeping) |
+| 4/15 | Complete project implementation. At this stage we might hand off our app to the UT baseball team. |
+>>>>>>> 2a0ea15 (edited timeline)
 
   - Constraints
     - Are there regulatory or legal constraints?
