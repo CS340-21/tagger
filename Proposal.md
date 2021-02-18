@@ -5,7 +5,7 @@ Team members
   - Sam Baumann, Rob Bray, Brandan Roachell, Taylor Rogers
 
 # Introduction
-This project is a baseball tagger, which is a scorekeeping application for baseball coaches. The main taggers currently competing on the market both have the same limited flexibility. This project idea is not novel, but it fills the need of the market by introducing more flexibility within the app that competitors lack, such as splitting rosters. It resembles iScore and GameChanger, two widely used scorekeeping apps for multiple sports, including baseball. This app will be different as it will focus on baseball and provide options for tagging intrasquad scrimmages.
+This project is a scorekeeping application for baseball coaches. The main taggers currently competing on the market both have the same limited flexibility. This project idea is not novel, but it fills the need of the market by introducing more flexibility within the app that competitors lack, such as splitting rosters. It resembles iScore and GameChanger, two widely used scorekeeping apps for multiple sports, including baseball. This app will be different as it will focus on baseball and provide options for tagging intrasquad scrimmages.
 
 ### Team Background
 Sam: Have experience with Django and other web development tools such as HTML/CSS/JS.
@@ -14,7 +14,7 @@ Rob: Basic knowledge of SQL, new to Python and web development.
 
 Brandan: I have some background with website development and a little bit with database management. Never used Python before.
 
-Taylor: Basic knowledge of SQL, HTML, and CSS. No experience building an app, but experience with baseball scoring software.
+Taylor: Basic knowledge of SQL, HTML, and CSS. No experience building an app, but experience with baseball scoring software and user experience design. A Video/Scouting Manager for UT Baseball.
 
 # Customer value
 ### Primary Customer
@@ -39,7 +39,7 @@ We plan to use Django, which is a Python-based web framework. Using a web applic
 # Our Team
 Since only one member (Sam) has built an app before, though not related to baseball, so the tools are generally new to everyone.
 ### Roles
-Taylor: I don't mind taking notes at meetings and on our progress and things. Also, I will be in regular communication with the UT Baseball coaches, so I can discuss our project with them. The other Video/Scouting Managers are business analytics majors, so if we have questions about database stuff, I can talk to them.
+Taylor: Take notes at meetings and on our progress and things. Also, I will be in regular communication with the UT Baseball Coaches, so I can discuss our project with them and serve as the user advocate. 
 
 Brandan: UI design, in addition to helping with whatever else needs to be done
 
