@@ -1,4 +1,4 @@
-# Tagger
+# EZScore
 
 Team members
 
@@ -16,7 +16,6 @@ Brandan: I have some background with website development and a little bit with d
 
 Taylor: Basic knowledge of SQL, HTML, and CSS. No experience building an app, but experience with baseball scoring software.
 
-  - Anything else to orient the reader
 # Customer value
 ### Primary Customer
 The primary customer of this application is a baseball coach. Since our solution is designed specifically with scrimmage-style scenarios in mind, teams that utilize the preseason for development will be more inclined to use this. Collegiate baseball coaches will be our largest customers, including those at junior colleges and all four-year institutions. These coaches desire software that grants them the flexibility to effectively keep statistics on intrasquad scrimmages. Current tagging software is not capable of easily splitting a roster, which is important for ease of tagging intrasquad scrimmages. There is also a lack of flexibility in setting up the start of a match, i.e. having a smaller starting line-up. There is an existing market, and there are two established competitors. This software will not entirely replace either of these, but works more as a supplementary application.
@@ -24,45 +23,18 @@ The primary customer of this application is a baseball coach. Since our solution
 Customers will be able to easily keep score during baseball intra-squads. This app, unlike others, will deliver users the ability to split a single roster, begin a half inning with a number of outs and/or ghost runners, and take other scrimmage-style situations into account. Customers will greatly benefit from the increased flexibility provided by our application. Stats from scrimmages and other pre-season practices are important to a team's development. Our solution enables customers to track these things accurately and easily. Current shortcomings in the market discourage coaches from tracking these stats, so team development has been limited. Development will be improved with the ability to effectively keep score with our solution. The app will be much more flexible than traditional scorekeeping applications for baseball. Flexibility in rosters and situations will make tagging scrimmages much more efficient. 
 ### Measure of Success
 The idea of our solution has been discussed with a collegiate baseball coach, who originally expressed discontent with current software. He seems excited about the proposed solution. We will get user opinions from short, optional feedback surveys sent out to users within the app. We will ask the customer to rate on a scale of 1-10 how much they agree with statements like &quot;it is easy to find options for pitch results,&quot; much like faculty feedback surveys at UT. We will also be able to get the opinion of the mentioned coach on how the app compares with existing ones.
-  - Customer need
-    - Who is the primary customer? What do they want?
+  
+# Proposed Solution & Technology
+### The Ideal System
+The software will keep track of everything that happens during a scrimmage and what time-stamp it happened at, storing everything in SQL tables. The user will input each pitch, whether it was hit or not, and if it was, what kind of ball it was. The user will also input what base the hitter made it to, and will progress runners on the bases throughout the game. These inputs will be with simple buttons within submenus for each category (pitch, ball, etc.). The software will save the game's tags to be viewed again later. The website will host everything, making it highly portable. The website will have the ability to start a new game, enter rosters (or choose from existing rosters), and start tagging. It will also have accounts so the user can move their data from one device to another. Each game will use an SQL table to store tags and scores.
 
-The primary customer of this application is a baseball coach. Since our solution is designed specifically with scrimmage-style scenarios in mind, teams that utilize the preseason for development will be more inclined to use this. Collegiate baseball coaches will be our largest customers, including those at junior colleges and all four-year institutions. These coaches desire software that grants them the flexibility to effectively keep statistics on intrasquad scrimmages.
-
-    - Why? What is the underlying problem to solve or experience to have?
-
-Current tagging software is not capable of easily splitting a roster, which is important for ease of tagging intrasquad scrimmages. There is also a lack of flexibility in setting up the start of a match, i.e. having a smaller starting line-up.
-
-    - Place the software in context of the market
-
-There is an existing market, and there are two established competitors. This software will not entirely replace either of these, but works more as a supplementary application.
-
-  - Proposed solution
-    - From the customer POV, what will this deliver?
-
-Customers will be able to easily keep score during baseball intra-squads. This app, unlike others, will deliver users the ability to split a single roster, begin a half inning with a number of outs and/or ghost runners, and take other scrimmage-style situations into account.
-
-    - How will the customer benefit from this?
-
-Customers will greatly benefit from the increased flexibility provided by our application. Stats from scrimmages and other pre-season practices are important to a team's development. Our solution enables customers to track these things accurately and easily. Current shortcomings in the market discourage coaches from tracking these stats, so team development has been limited. Development will be improved with the ability to effectively keep score with our solution.
-
-    - Does it provide a new capability or is it better, easier, faster, etc?
-
-The app will be much more flexible than traditional scorekeeping applications for baseball. Flexibility in rosters and situations will make tagging scrimmages much more efficient.
-
-    - Has the idea been tested on anyone?
-
-The idea of our solution has been discussed with a collegiate baseball coach, who originally expressed discontent with current software. He seems excited about the proposed solution.
-
-  - Measure of success
-    - How will you know if customers got the benefits?
-
-Short, optional feedback surveys sent out to users within the app.
-
-    - What are your customer-centric measures of success?
-
-Ask the customer to rate on a scale of 1-10 how much they agree with statements like &quot;it is easy to find options for pitch results,&quot; much like faculty feedback surveys at UT.
-
+![image](https://github.com/CS340-21/tagger/blob/master/Screenshot_20210211_144540.png?raw=true)
+### The Minimum System
+A minimal system that would remain valuable to the customer includes significant flexibility for intrasquad and scrimmage-style situations. Since there are widespread scorekeeping applications for traditional games, the most vital part of our system is its flexibility. A possible enhancement for our scorekeeping application could be the ability for others to livestream games.
+### Testing the System
+We can test the app in the environment in which it was made for, since we have access to a baseball team doing actual intrasquad scrimmages.
+### Tools for Building
+We plan to use Django, which is a Python-based web framework. Using a web application will make it more portable. We also plan to use SQL to build our database for rosters and tagging data. In addition to Django, we could use react to help with our front-end.
 - Section 3: Proposed solution and technology
   - System- technology we deliver
     - From the developer's POV, what will our software do?
@@ -138,14 +110,12 @@ _ **Hopefully** _
 
 | Date | Deadline |
 | --- | --- |
-| 2/11 | Preliminary project proposal, start learning our technologies|
-| 2/18 | Revised proposal, team members familliar with technologies|
-| 2/25 | Setup project structure and decide what features will go into the minimum viable system |
-| 3/4 | Design and implement a minimum viable system. A minimum viable system for this project might be a tagging system that can function on the front-end, without any special features, also write first status report |
-| 3/11 | Continue adding features and begin testing |
-| 3/18 | Add features to the system. (some features to add at this stage could be custom starting scores and saved account information). Write second status report. |
-| 4/1 | Refine system and test. At this stage, we will run many tests (possibly by watching baseball games and using our app to do scorekeeping). Write final status report. |
-| 4/15 | Complete project implementation. At this stage we might hand off our app to the UT baseball team. Write final project report. |
+| 2/11 | Preliminary project proposal |
+| 2/18 | Revised proposal |
+| 3/4 | Design and implement a minimum viable system. A minimum viable system for this project might be a tagging system that can function on the front-end, without any special features |
+| 3/18 | Add features to the system. (some features to add at this stage could be custom starting scores and saved account information) |
+| 4/1 | Refine system and test. At this stage, we will run many tests (possibly by watching baseball games and using our app to do scorekeeping) |
+| 4/15 | Complete project implementation. At this stage we might hand off our app to the UT baseball team. |
 
   - Constraints
     - Are there regulatory or legal constraints?
