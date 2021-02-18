@@ -161,8 +161,9 @@ _ **Hopefully** _
 
 | Date | Deadline |
 | --- | --- |
-| 2/11 | Preliminary project proposal |
-| 2/18 | Revised proposal |
+| 2/11 | Preliminary project proposal, start learning our technologies|
+| 2/18 | Revised proposal, team members familliar with technologies|
+| 2/25 | Setup project structure and decide what features will go into the minimum viable system |
 | 3/4 | Design and implement a minimum viable system. A minimum viable system for this project might be a tagging system that can function on the front-end, without any special features |
 | 3/18 | Add features to the system. (some features to add at this stage could be custom starting scores and saved account information) |
 | 4/1 | Refine system and test. At this stage, we will run many tests (possibly by watching baseball games and using our app to do scorekeeping) |
