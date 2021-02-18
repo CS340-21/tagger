@@ -16,37 +16,14 @@ Brandan: I have some background with website development and a little bit with d
 
 Taylor: Basic knowledge of SQL, HTML, and CSS. No experience building an app, but experience with baseball scoring software.
 
-  - What is the project?
-
-    A baseball tagger--a scorekeeping application for baseball coaches
-
-  - What is the motivation?
-
-The main taggers currently competing on the market both have the same limited flexibility.
-
-  - Place the project in the context of the market
-    - Is this novel? What need does it fill?
-
-This project idea is not novel, but it fills the need of the market by introducing more flexibility within the app that competitors lack, such as splitting rosters.
-
-    - What existing software does it resemble? How is it different?
-
-It resembles iScore and GameChanger, two widely used scorekeeping apps for multiple sports, including baseball. This app will be different as it will focus on baseball and provide options for tagging intrasquad scrimmages.
-
-  - What are the backgrounds of the team members?
-
-(assuming this means more related background info)
-
-Sam - Have experience with Django and other web development tools such as HTML/CSS/JS.
-
-Rob - Basic knowledge of SQL, new to Python and web development.
-
-Brandan - I have some background with website development and a little bit with database management. Never used Python before.
-
-Taylor - Basic knowledge of SQL, HTML, and CSS. No experience building an app, but experience with baseball scoring software.
-
   - Anything else to orient the reader
-- Section 2: Customer value
+# Customer value
+### Primary Customer
+The primary customer of this application is a baseball coach. Since our solution is designed specifically with scrimmage-style scenarios in mind, teams that utilize the preseason for development will be more inclined to use this. Collegiate baseball coaches will be our largest customers, including those at junior colleges and all four-year institutions. These coaches desire software that grants them the flexibility to effectively keep statistics on intrasquad scrimmages. Current tagging software is not capable of easily splitting a roster, which is important for ease of tagging intrasquad scrimmages. There is also a lack of flexibility in setting up the start of a match, i.e. having a smaller starting line-up. There is an existing market, and there are two established competitors. This software will not entirely replace either of these, but works more as a supplementary application.
+### Proposed Solution
+Customers will be able to easily keep score during baseball intra-squads. This app, unlike others, will deliver users the ability to split a single roster, begin a half inning with a number of outs and/or ghost runners, and take other scrimmage-style situations into account. Customers will greatly benefit from the increased flexibility provided by our application. Stats from scrimmages and other pre-season practices are important to a team's development. Our solution enables customers to track these things accurately and easily. Current shortcomings in the market discourage coaches from tracking these stats, so team development has been limited. Development will be improved with the ability to effectively keep score with our solution. The app will be much more flexible than traditional scorekeeping applications for baseball. Flexibility in rosters and situations will make tagging scrimmages much more efficient. 
+### Measure of Success
+The idea of our solution has been discussed with a collegiate baseball coach, who originally expressed discontent with current software. He seems excited about the proposed solution. We will get user opinions from short, optional feedback surveys sent out to users within the app. We will ask the customer to rate on a scale of 1-10 how much they agree with statements like &quot;it is easy to find options for pitch results,&quot; much like faculty feedback surveys at UT. We will also be able to get the opinion of the mentioned coach on how the app compares with existing ones.
   - Customer need
     - Who is the primary customer? What do they want?
 
