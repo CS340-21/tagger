@@ -1,0 +1,10 @@
+<h1>{{"Rosters"}}</h1>
+{% if all_rosters_list %}
+    <ul>
+    {% for roster in all_rosters_list %}
+        <li><a href="{% url 'tagger:roster_details' roster.id %}">{{ roster.roster_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
