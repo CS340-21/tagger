@@ -1,4 +1,8 @@
-from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.shortcuts import get_object_or_404, render
+from django.urls import reverse
+from django.views import generic
+from django import forms
 from django.views.generic.edit import CreateView
 from django.views.generic.detail import DetailView
 from django.views import generic
@@ -45,8 +49,37 @@ class player_details(DetailView):
     template_name = 'tagger/player_details.html'
 
 # this makes a new player to save
+"""
 class create_player(CreateView):
     template_name = 'tagger/player_form.html'
     model = Player
     fields = ['player_name', 'player_height']
     #return HttpResponseRedirect(reverse('tagger:player_details', args=))
+"""
+
+class player_form(forms.Form):
+    form_player_name = forms.CharField(label='Player Name', max_length=50)
+    form_player_height = forms.IntegerField(label='Height')
+
+def add_player(request, roster_id):
+    roster = get_object_or_404(Roster, pk=roster_id)
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = player_form(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            new_player = Player(player_name=form.cleaned_data['form_player_name'], player_height=form.cleaned_data['form_player_height'])
+            new_player.save()
+            print("worked\n")
+            roster.player_set.add(new_player)
+            # process the data in form.cleaned_data as required
+            # ...
+            # redirect to a new URL:
+            return HttpResponseRedirect(reverse('tagger:roster_details', args=(roster_id,)))
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = player_form()
+
+    return render(request, 'player_form.html', {'form': form})

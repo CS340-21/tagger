@@ -11,7 +11,7 @@ class Roster(models.Model):
 
 # our player model, which is associated with a Roster by ForeignKey
 class Player(models.Model):
-    #roster = models.ForeignKey(Roster, on_delete=models.CASCADE)
+    roster = models.ForeignKey(Roster, on_delete=models.CASCADE, null=True)
     player_name = models.CharField(max_length=50)
     player_height = models.IntegerField(default=0)
 
