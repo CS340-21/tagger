@@ -2,12 +2,15 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
+from django.utils import timezone
 from django import forms
 from django.views.generic.edit import CreateView
 from django.views.generic.detail import DetailView
 from django.views import generic
 from tagger.models import Player
 from tagger.models import Roster
+from tagger.models import Game
+from tagger.models import Play
 
 # home page
 def home(request):
@@ -83,3 +86,74 @@ def add_player(request, roster_id):
         form = player_form()
 
     return render(request, 'player_form.html', {'form': form})
+
+
+# form for startin a new game
+class game_form(forms.Form):
+    form_game_title = forms.CharField(label='Game Title', max_length=200)
+
+# starts a new game
+def create_game(request):
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = game_form(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            new_game = Game(game_title=form.cleaned_data['form_game_title'])
+            new_game.start_time = timezone.now()
+            new_game.save()
+            print("worked\n")
+            # process the data in form.cleaned_data as required
+            # ...
+            # redirect to a new URL:
+            return HttpResponseRedirect(reverse('tagger:game_details', args=(new_game.id,)))
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = game_form()
+
+    return render(request, 'game_form.html', {'form': form})
+
+class game_details(DetailView):
+    model = Game
+    template_name = 'tagger/game_details.html'
+
+# list the rosters
+class game_index(generic.ListView):
+    template_name = 'tagger/game_index.html'
+    context_object_name = 'all_games_list'
+
+    def get_queryset(self):
+        """all games."""
+        return Game.objects.all()
+
+class play_form(forms.Form):
+    form_play_type = forms.CharField(label='Play Type', max_length=50)
+
+def add_play(request, game_id):
+    game = get_object_or_404(Game, pk=game_id)
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = play_form(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            new_play = Play(play_type=form.cleaned_data['form_play_type'], time_stamp=timezone.now())
+            new_play.save()
+            print("worked\n")
+            game.play_set.add(new_play)
+            # process the data in form.cleaned_data as required
+            # ...
+            # redirect to a new URL:
+            return HttpResponseRedirect(reverse('tagger:game_details', args=(game_id,)))
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = play_form()
+
+    return render(request, 'play_form.html', {'form': form})
+
+class play_details(DetailView):
+    model = Play
+    template_name = 'tagger/play_details.html'

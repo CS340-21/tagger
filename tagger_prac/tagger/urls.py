@@ -13,4 +13,9 @@ urlpatterns = [
     path('roster/add_player/<int:roster_id>/', views.add_player, name='add_player'),
     path('player_details/<int:pk>/', views.player_details.as_view(), name='player_details'),
     path('roster_details/<int:pk>/', views.roster_details.as_view(), name='roster_details'),
+    path('create_game/', views.create_game, name='create_game'),
+    path('game_index/', views.game_index.as_view(), name='game_index'),
+    path('game_details/<int:pk>/', views.game_details.as_view(), name='game_details'),
+    path('game_details/add_play/<int:game_id>/', views.add_play, name='add_play'),
+    path('play_details/<int:pk>/', views.play_details.as_view(), name='play_details'),
 ]

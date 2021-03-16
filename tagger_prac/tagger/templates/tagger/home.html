@@ -1,3 +1,7 @@
-<h1>{{'Home'}}</h1>
+<h1 style="color: white">Home</h1>
+<li><a href="{% url 'tagger:game_index' %}">{{ 'View list of games' }}</a></li><br>
 <li><a href="{% url 'tagger:roster_index' %}">{{ 'View list of rosters' }}</a></li><br>
 <li><a href="{% url 'tagger:player_index' %}">{{ 'View list of players' }}</a></li><br>
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'tagger/homepage.css' %}">

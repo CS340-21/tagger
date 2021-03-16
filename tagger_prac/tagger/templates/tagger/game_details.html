@@ -1,0 +1,17 @@
+<h1>{{ game.game_title }}</h1>
+{% if game.play_set.all %}
+    <ul>
+    {% for play in game.play_set.all %}
+        <li><a href="{% url 'tagger:play_details' play.id %}"> {{play.time_stamp}} {{ play.play_type }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+<br><br>
+<a href="{% url 'tagger:add_play' game.id %}">{{ 'Add a new play' }}</a><br>
+<a href="{% url 'tagger:home' %}">{{ 'Return to homepage' }}</a>
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'tagger/homepage.css' %}">

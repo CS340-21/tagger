@@ -1,7 +1,8 @@
-{% if all_players_list %}
+<h1 style="color.white">{{"games"}}</h1>
+{% if all_games_list %}
     <ul>
-    {% for player in all_players_list %}
-        <li><a href="{% url 'tagger:player_details' player.id %}">{{ player.player_name }}</a></li>
+    {% for game in all_games_list %}
+        <li><a href="{% url 'tagger:game_details' game.id %}">{{ game.game_title }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

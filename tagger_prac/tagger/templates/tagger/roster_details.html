@@ -12,3 +12,6 @@
 <br><br>
 <a href="{% url 'tagger:add_player' roster.id %}">{{ 'Add a new player' }}</a><br>
 <a href="{% url 'tagger:home' %}">{{ 'Return to homepage' }}</a>
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'tagger/homepage.css' %}">

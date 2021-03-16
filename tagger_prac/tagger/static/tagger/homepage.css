@@ -1,0 +1,7 @@
+li a{
+  color:white;
+}
+body{
+  background: white url('images/diamond.gif') no-repeat;
+  background-size: cover;
+}
