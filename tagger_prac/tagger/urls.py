@@ -1,4 +1,9 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework import routers
+from tagger import views
+
+router = routers.DefaultRouter()
+router.register(r'rosters', views.RosterView, 'roster')
 
 from . import views
 
@@ -18,4 +23,5 @@ urlpatterns = [
     path('game_details/<int:pk>/', views.game_details.as_view(), name='game_details'),
     path('game_details/add_play/<int:game_id>/', views.add_play, name='add_play'),
     path('play_details/<int:pk>/', views.play_details.as_view(), name='play_details'),
+    path('api/', include(router.urls)),
 ]
