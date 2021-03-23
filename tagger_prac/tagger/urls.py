@@ -4,6 +4,7 @@ from tagger import views
 
 router = routers.DefaultRouter()
 router.register(r'rosters', views.RosterView, 'roster')
+router.register(r'player', views.PlayerView, 'player')
 
 from . import views
 

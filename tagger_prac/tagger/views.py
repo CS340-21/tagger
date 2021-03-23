@@ -13,12 +13,17 @@ from tagger.models import Game
 from tagger.models import Play
 from rest_framework import viewsets
 from .serializers import RosterSerializer
+from .serializers import PlayerSerializer
 
 # test React view
 
 class RosterView(viewsets.ModelViewSet):
     serializer_class = RosterSerializer
     queryset = Roster.objects.all()
+
+class PlayerView(viewsets.ModelViewSet):
+    serializer_class = PlayerSerializer
+    queryset = Player.objects.all()
 
 # home page
 def home(request):

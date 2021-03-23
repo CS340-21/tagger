@@ -11,6 +11,7 @@ class App extends Component {
       activeItem: {
         roster_name: "",
         num_players: "",
+        player_set: "",
       },
     };
   }
@@ -51,7 +52,7 @@ class App extends Component {
   };
 
   createItem = () => {
-    const item = { roster_name: "", num_players: "" };
+    const item = { roster_name: "", num_players: "", player_set: "", };
 
     this.setState({ activeItem: item, modal: !this.state.modal });
   };
@@ -79,7 +80,7 @@ class App extends Component {
             className="btn btn-secondary mr-2"
             onClick={() => this.editItem(item)}
           >
-            Edit
+            View
           </button>
           <button
             className="btn btn-danger"
@@ -104,7 +105,7 @@ class App extends Component {
                   className="btn btn-primary"
                   onClick={this.createItem}
                 >
-                  Add task
+                  Add Roster
                 </button>
               </div>
               <ul className="list-group list-group-flush border-top-0">

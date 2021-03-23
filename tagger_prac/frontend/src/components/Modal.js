@@ -53,7 +53,7 @@ export default class CustomModal extends Component {
               />
             </FormGroup>
             <FormGroup>
-              <Label for="roster-num_players">Num Players</Label>
+              <Label for="roster-num_players">Number of Players</Label>
               <Input
                 type="text"
                 id="roster-num_players"
@@ -64,6 +64,12 @@ export default class CustomModal extends Component {
               />
             </FormGroup>
           </Form>
+          <div>
+            <p>Players</p>
+            {this.state.activeItem.player_set.map((p) => (
+              <li>{p}</li>
+            ))}
+          </div>
         </ModalBody>
         <ModalFooter>
           <Button
