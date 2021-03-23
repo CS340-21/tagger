@@ -1,4 +1,4 @@
-<h1>{{ roster.roster_name }}</h1>
+<h1 style="color: white;">{{ roster.roster_name }}</h1>
 {% if roster.player_set.all %}
     <ul>
     {% for player in roster.player_set.all %}
@@ -6,7 +6,7 @@
     {% endfor %}
     </ul>
 {% else %}
-    <p>No polls are available.</p>
+    <p>No players are available.</p>
 {% endif %}
 
 <br><br>

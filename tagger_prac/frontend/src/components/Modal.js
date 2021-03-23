@@ -38,18 +38,18 @@ export default class CustomModal extends Component {
 
     return (
       <Modal isOpen={true} toggle={toggle}>
-        <ModalHeader toggle={toggle}>Roster list</ModalHeader>
+        <ModalHeader toggle={toggle}>Roster List</ModalHeader>
         <ModalBody>
           <Form>
             <FormGroup>
-              <Label for="roster-title">Title</Label>
+              <Label for="roster-name">Name</Label>
               <Input
                 type="text"
-                id="roster-title"
+                id="roster-name"
                 name="roster_name"
-                value={this.state.activeItem.roster_title}
+                value={this.state.activeItem.roster_name}
                 onChange={this.handleChange}
-                placeholder="Enter roster Title"
+                placeholder="Enter Roster Name"
               />
             </FormGroup>
             <FormGroup>
@@ -60,7 +60,7 @@ export default class CustomModal extends Component {
                 name="num_players"
                 value={this.state.activeItem.num_players}
                 onChange={this.handleChange}
-                placeholder="Enter roster num players"
+                placeholder="Enter Number of Players"
               />
             </FormGroup>
           </Form>

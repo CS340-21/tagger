@@ -6,7 +6,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      viewCompleted: false,
       rosterList: [],
       modal: false,
       activeItem: {
@@ -41,7 +40,7 @@ class App extends Component {
       return;
     }
     axios
-      .post("/tagger/api/rosters/", item)
+      .post(`/tagger/api/rosters/`, item)
       .then((res) => this.refreshList());
   };
 
@@ -61,38 +60,8 @@ class App extends Component {
     this.setState({ activeItem: item, modal: !this.state.modal });
   };
 
-  displayCompleted = (status) => {
-    if (status) {
-      return this.setState({ viewCompleted: true });
-    }
-
-    return this.setState({ viewCompleted: false });
-  };
-
-  renderTabList = () => {
-    return (
-      <div className="nav nav-tabs">
-        <span
-          onClick={() => this.displayCompleted(true)}
-          className={this.state.viewCompleted ? "nav-link active" : "nav-link"}
-        >
-          Complete
-        </span>
-        <span
-          onClick={() => this.displayCompleted(false)}
-          className={this.state.viewCompleted ? "nav-link" : "nav-link active"}
-        >
-          Incomplete
-        </span>
-      </div>
-    );
-  };
-
   renderItems = () => {
-    const { viewCompleted } = this.state;
-    const newItems = this.state.rosterList/*.filter(
-      (item) => item.completed === viewCompleted
-    );*/
+    const newItems = this.state.rosterList
 
     return newItems.map((item) => (
       <li
@@ -100,9 +69,7 @@ class App extends Component {
         className="list-group-item d-flex justify-content-between align-items-center"
       >
         <span
-          className={`roster-title mr-2 ${
-            this.state.viewCompleted ? "completed-roster" : ""
-          }`}
+          className={`roster-name mr-2`}
           title={item.num_players}
         >
           {item.roster_name}
@@ -140,7 +107,6 @@ class App extends Component {
                   Add task
                 </button>
               </div>
-              {this.renderTabList()}
               <ul className="list-group list-group-flush border-top-0">
                 {this.renderItems()}
               </ul>

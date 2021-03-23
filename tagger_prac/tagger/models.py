@@ -10,7 +10,7 @@ class Roster(models.Model):
     def get_absolute_url(self):
         return reverse('tagger:roster_details', kwargs={'pk': self.pk})
 
-# our player model, which is associated with a Roster by ForeignKey
+# our Player model, which is associated with a Roster by ForeignKey
 class Player(models.Model):
     roster = models.ForeignKey(Roster, on_delete=models.CASCADE, null=True)
     player_name = models.CharField(max_length=50)
