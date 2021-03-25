@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import Modal from "./components/Modal";
+import RosterModal from "./components/Modal";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
-class App extends Component {
+class RosterList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -114,16 +115,22 @@ class App extends Component {
             </div>
           </div>
         </div>
+        <Link to="/">
+          <button>
+            Back
+          </button>
+        </Link>
         {this.state.modal ? (
-          <Modal
+          <RosterModal
             activeItem={this.state.activeItem}
             toggle={this.toggle}
             onSave={this.handleSubmit}
           />
         ) : null}
       </main>
+      
     );
   }
 }
 
-export default App;
+export default RosterList;
