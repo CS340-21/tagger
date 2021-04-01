@@ -5,6 +5,10 @@ from tagger import views
 router = routers.DefaultRouter()
 router.register(r'rosters', views.RosterView, 'roster')
 router.register(r'player', views.PlayerView, 'player')
+router.register(r'game', views.GameView, 'game')
+router.register(r'inning', views.InningView, 'inning')
+router.register(r'atbat', views.AtBatView, 'atbat')
+router.register(r'pitch', views.PitchView, 'pitch')
 
 from . import views
 
@@ -22,7 +26,7 @@ urlpatterns = [
     path('create_game/', views.create_game, name='create_game'),
     path('game_index/', views.game_index.as_view(), name='game_index'),
     path('game_details/<int:pk>/', views.game_details.as_view(), name='game_details'),
-    path('game_details/add_play/<int:game_id>/', views.add_play, name='add_play'),
-    path('play_details/<int:pk>/', views.play_details.as_view(), name='play_details'),
+    #path('game_details/add_play/<int:game_id>/', views.add_play, name='add_play'),
+    #path('play_details/<int:pk>/', views.play_details.as_view(), name='play_details'),
     path('api/', include(router.urls)),
 ]
