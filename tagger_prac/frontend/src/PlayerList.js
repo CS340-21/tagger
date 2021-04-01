@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PlayerModal from "./components/Modal";
+import PlayerModal from "./components/PlayerModal";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -11,7 +11,7 @@ class PlayerList extends Component {
       modal: false,
       activeItem: {
         player_name: "",
-        player_height: "",
+        player_number: "",
         roster: "",
       },
     };
@@ -53,7 +53,7 @@ class PlayerList extends Component {
   };
 
   createItem = () => {
-    const item = { player_name: "", player_height: "", roster: "", };
+    const item = { player_name: "", player_number: "", roster: "", };
 
     this.setState({ activeItem: item, modal: !this.state.modal });
   };
@@ -131,5 +131,5 @@ class PlayerList extends Component {
     );
   }
 }
-  
+
 export default PlayerList;
