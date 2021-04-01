@@ -14,9 +14,9 @@ class Roster(models.Model):
 class Player(models.Model):
     roster = models.ForeignKey(Roster, on_delete=models.CASCADE, null=True)
     player_name = models.CharField(max_length=50)
-    player_number = models.IntegerField()
-    player_throwing_handedness = models.CharField(max_length=1)
-    player_batting_handedness = models.CharField(max_length=1)
+    player_number = models.IntegerField(default=0)
+    player_throwing_handedness = models.CharField(max_length=1, default='0')
+    player_batting_handedness = models.CharField(max_length=1, default='0')
 
     def get_absolute_url(self):
         return reverse('tagger:player_details', kwargs={'pk': self.pk})
@@ -24,8 +24,8 @@ class Player(models.Model):
 # our Game model, which is going to have two rosters
 class Game(models.Model):
     game_title = models.CharField(max_length=200)
-    start_time = models.DateTimeField('time started')
-    date = models.DatTimeField('date')
+    start_time = models.DateTimeField('time started', default=timezone.now())
+    date = models.DateTimeField('date', default=timezone.now())
 
     def get_absolute_url(self):
         return reverse('tagger:game_details', kwargs={'pk': self.pk})
@@ -50,10 +50,10 @@ class AtBat(models.Model):
 
 # our pitch model
 class Pitch(models.Model):
-    pitch_type = models.CharField()
-    pitch_call = models.CharField()
-    pitcher = models.ForeignKey(Player, on_delete=models.CASCADE, null=True)
-    batter = models.ForeignKey(Player, on_delete=models.CASCADE, null=True)
+    pitch_type = models.CharField(max_length=200)
+    pitch_call = models.CharField(max_length=200)
+    pitcher = models.ForeignKey(Player, on_delete=models.CASCADE, null=True, related_name='pitcher')
+    batter = models.ForeignKey(Player, on_delete=models.CASCADE, null=True, related_name='batter')
     pitch_number = models.IntegerField()
     atBat = models.ForeignKey(AtBat, on_delete=models.CASCADE, null=True)
 
