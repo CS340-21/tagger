@@ -61,10 +61,6 @@ We will meet roughly 2-3 times weekly depending on our progress. This is subject
 | 3/18 | Add features to the system. (some features to add at this stage could be custom starting scores and saved account information). Write second status report. |
 | 4/1 | Refine system and test. At this stage, we will run many tests (possibly by watching baseball games and using our app to do scorekeeping). Write third status report |
 | 4/15 | Complete project implementation. At this stage we might hand off our app to the UT baseball team. Write final report |
-| 3/4 | Design and implement a minimum viable system. A minimum viable system for this project might be a tagging system that can function on the front-end, without any special features |
-| 3/18 | Add features to the system. (some features to add at this stage could be custom starting scores and saved account information) |
-| 4/1 | Refine system and test. At this stage, we will run many tests (possibly by watching baseball games and using our app to do scorekeeping) |
-| 4/15 | Complete project implementation. At this stage we might hand off our app to the UT baseball team. |
 
 ### Constraints
 There are few legal constraints to this project. Of course, we must include the copyright license for Django somewhere in source code, as well as any other free tools we use. There are no ethical concerns that we need to worry about.
