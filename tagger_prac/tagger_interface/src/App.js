@@ -29,7 +29,10 @@ function Lineup(){
 
 function Tagging(){
   return(
-    <div>Tagging Goes Here</div>
+    <div>
+      <div id="tagUpper">Tagging Goes Here</div>
+      <div id="taglower">buttons here</div>
+    </div>
   )
 }
 

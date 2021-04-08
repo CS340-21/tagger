@@ -51,3 +51,11 @@ header * {
   width: 25%;
   float: left;
 }
+
+#tagUpper {
+  height: 75%;
+}
+
+#tagLower {
+  height: 25%;
+}

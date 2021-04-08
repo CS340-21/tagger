@@ -1,3 +1,4 @@
+import Button from 'react-bootstrap/Button';
 import './Tagger.css';
 
 function Tagger() {
@@ -29,7 +30,26 @@ function Lineup(){
 
 function Tagging(){
   return(
-    <div>Tagging Goes Here</div>
+    <div class="taggingwrapper">
+      <div id="tagUpper"></div>
+      <div id="taglower">
+        <Button>
+          Ball
+        </Button>
+        {' '}
+        <Button>
+          Strike
+        </Button>
+        {' '}
+        <Button>
+          Foul
+        </Button>
+        {' '}
+        <Button>
+          Hit
+        </Button>
+      </div>
+    </div>
   )
 }
 

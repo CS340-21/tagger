@@ -16,6 +16,10 @@ header {
   display: flex;
 }
 
+div {
+  height: 100%;
+}
+
 header * {
   flex-shrink: 0;
   width: 50%;
@@ -26,10 +30,12 @@ header * {
   height: 100%;
 }
 
+/*
 .Content * {
   height: 100%;
   flex-shrink: 0;
 }
+*/
 
 .lineup {
   width: 25%;
@@ -43,11 +49,20 @@ header * {
   border-left: 1px solid black;
   border-right: 1px solid black;
   color: white;
-  background-image: url("field image.jpeg");
-  background-size: cover;
+  background-image: url('field\ image.jpeg');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .stats {
   width: 25%;
   float: left;
+}
+
+#tagUpper {
+  height: 85%;
+}
+
+#tagLower {
+  height: 15%;
 }
