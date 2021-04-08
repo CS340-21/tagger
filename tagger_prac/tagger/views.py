@@ -7,13 +7,9 @@ from django import forms
 from django.views.generic.edit import CreateView
 from django.views.generic.detail import DetailView
 from django.views import generic
-from tagger.models import Player
-from tagger.models import Roster
-from tagger.models import Game
-from tagger.models import Play
+from tagger.models import *
 from rest_framework import viewsets
-from .serializers import RosterSerializer
-from .serializers import PlayerSerializer
+from .serializers import *
 
 # test React view
 
@@ -24,6 +20,22 @@ class RosterView(viewsets.ModelViewSet):
 class PlayerView(viewsets.ModelViewSet):
     serializer_class = PlayerSerializer
     queryset = Player.objects.all()
+
+class GameView(viewsets.ModelViewSet):
+    serializer_class = GameSerializer
+    queryset = Game.objects.all()
+
+class InningView(viewsets.ModelViewSet):
+    serializer_class = InningSerializer
+    queryset = Inning.objects.all()
+
+class AtBatView(viewsets.ModelViewSet):
+    serializer_class = AtBatSerializer
+    queryset = AtBat.objects.all()
+
+class PitchView(viewsets.ModelViewSet):
+    serializer_class = PitchSerializer
+    queryset = Pitch.objects.all()
 
 # home page
 def home(request):
@@ -140,7 +152,7 @@ class game_index(generic.ListView):
     def get_queryset(self):
         """all games."""
         return Game.objects.all()
-
+"""
 class play_form(forms.Form):
     form_play_type = forms.CharField(label='Play Type', max_length=50)
 
@@ -166,7 +178,4 @@ def add_play(request, game_id):
         form = play_form()
 
     return render(request, 'play_form.html', {'form': form})
-
-class play_details(DetailView):
-    model = Play
-    template_name = 'tagger/play_details.html'
+"""

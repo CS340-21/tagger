@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import RosterModal from "./components/Modal";
+import RosterModal from "./components/RosterModal";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -128,7 +128,7 @@ class RosterList extends Component {
           />
         ) : null}
       </main>
-      
+
     );
   }
 }
