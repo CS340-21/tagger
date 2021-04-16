@@ -3,18 +3,18 @@ import './Tagger.css';
 
 function Tagger() {
   return (
-    <div class="App">
+    <div class="App fullheight">
       <header>
         <span class="gameTitle">Game Title</span> <span class="date">Current date</span>
       </header>
-      <div class="Content">
-        <div class="lineup">
+      <div class="Content fullheight">
+        <div class="lineup fullheight">
           <Lineup />
         </div>
-        <div class="tagging">
+        <div class="tagging fullheight">
           <Tagging />
         </div>
-        <div class="stats">
+        <div class="stats fullheight">
           <Stats />
         </div>
       </div>
@@ -30,7 +30,7 @@ function Lineup(){
 
 function Tagging(){
   return(
-    <div class="taggingwrapper">
+    <div class="taggingwrapper fullheight">
       <div id="tagUpper"></div>
       <div id="taglower">
         <Button>

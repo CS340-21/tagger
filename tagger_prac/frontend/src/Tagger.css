@@ -16,7 +16,7 @@ header {
   display: flex;
 }
 
-div {
+.fullheight {
   height: 100%;
 }
 
@@ -29,13 +29,6 @@ header * {
   display: flex;
   height: 100%;
 }
-
-/*
-.Content * {
-  height: 100%;
-  flex-shrink: 0;
-}
-*/
 
 .lineup {
   width: 25%;
