@@ -14,7 +14,7 @@ function Menu() {
           See Players
         </button>
       </Link>
-      <Link to="/tagger">
+      <Link to="/create_game">
         <button>
           Start Tagging!
         </button>

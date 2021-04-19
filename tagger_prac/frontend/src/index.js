@@ -7,6 +7,7 @@ import Menu from './Menu';
 import RosterList from './RosterList';
 import PlayerList from './PlayerList';
 import Tagger from './Tagger';
+import CreateGame from './CreateGame';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -16,6 +17,7 @@ ReactDOM.render(
         <Route exact path="/" component={Menu} />
         <Route path="/rosters" component={RosterList} />
         <Route path="/players" component={PlayerList} />
+        <Route path="/create_game" component={CreateGame} />
         <Route path="/tagger" component={Tagger} />
       </Switch>
     </BrowserRouter>

@@ -24,6 +24,8 @@ class Player(models.Model):
 # our Game model, which is going to have two rosters
 class Game(models.Model):
     game_title = models.CharField(max_length=200)
+    team1 = models.ForeignKey(Roster, on_delete=models.CASCADE, null=True, related_name='team1')
+    team2 = models.ForeignKey(Roster, on_delete=models.CASCADE, null=True, related_name='team2')
     start_time = models.DateTimeField('time started', default=timezone.now())
     date = models.DateTimeField('date', default=timezone.now())
 
