@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios"
-
+import Dropdown from 'react-bootstrap/Dropdown';
 
 import {
   Button,
@@ -19,66 +19,59 @@ export default class RosterModal extends Component {
     super(props);
     this.state = {
       playerList: [],
+      player_name_list: [],
       activeItem: this.props.activeItem,
     };
   }
 
   componentDidMount() {
     //console.log("hello");
-    this.state.activeItem.player_set.map((p) => (
-      this.getPlayerName(p)
+    this.refreshList();
+
+    this.state.activeItem.player_set.map((r) => (
+      this.getPlayerName(r)
     ));
   }
 
-  // updates the playerList to be rendered
-  getPlayerName = (p) => {
-    //this.setState(this.state.playerList, []);
-    /*const promise = axios.get(`/tagger/api/player/${p}`)
-    const data = promise.then((res) => res.data.player_name);
-      //.then((res) => console.log(res.data.player_name));
-      //.then((res) => this.setState({ nameList: res.data.player_name }));
-      console.log(data);
-    return;*/
+  refreshList = () => {
     axios
-      .get(`/tagger/api/player/${p}`)
-      //.then((res) => console.log(res.data.player_name));
-      .then((res) => this.setState({ playerList: [...this.state.playerList, res.data.player_name] })); // THANK YOU https://www.pluralsight.com/guides/add-data-into-an-array-in-a-state-object
-    //console.log(this.state.playerList);
-    /*return (axios
-      .get(`/tagger/api/player/${p}`)
-      //.then((res) => console.log(res.data.player_name));
-      .then((res) => res.data)).toJSON().player_name;*/
+      .get("/tagger/api/player/")
+      .then((res) => this.setState({ playerList: res.data }))
+      .catch((err) => console.log(err));
   };
 
-  /* create the li's with one function call
-  getPlayerNames = (player_set) => {
-    const ids = [21, 22];
-    const promises = ids.map((p) =>
-      axios
-        .get(`/tagger/api/player/${p}`)
-        .then((res) => res.data.player_name)
-        .then((name) => name)
-    );
-    const names = promises.map((prom) =>
-      prom
-    );
-    console.log(names);
+  refresh_name_list = () => {
+    this.state.activeItem.player_set.map((r) => (
+      this.getPlayerName(r)
+    ));
+  }
 
-    return names.map((name) =>
-      <li>{name}</li>
-    );
-  }*/
-
+  // updates the rosterList to be rendered
+  getPlayerName = (p) => {
+    axios
+      .get(`/tagger/api/player/${p}`)
+      .then((res) => this.setState({ player_name_list: [...this.state.player_name_list, res.data.player_name] }));
+  };
+/*
   renderNames = () => {
     const namesList = this.state.playerList;
 
     return namesList.map((name) => (
       <li>{name}</li>
     ));
-    /*this.state.activeItem.player_set.map((p) => (
-      <li>{this.getPlayerName(p)}</li>
-    ))*/
-  }
+  }*/
+
+  handleSubmit = (item) => {
+    if (item.id) {
+      axios
+        .put(`/tagger/api/player/${item.id}/`, item)
+        .then((res) => this.refreshList());
+      return;
+    }
+    axios
+      .post(`/tagger/api/player/`, item)
+      .then((res) => this.refreshList());
+  };
 
   handleChange = (e) => {
     let { name, value } = e.target;
@@ -91,6 +84,19 @@ export default class RosterModal extends Component {
 
     this.setState({ activeItem });
   };
+
+  new_player = (item) => {
+    const activeItem = {
+      ...this.state.activeItem,
+      player_set: [...this.state.activeItem.player_set, item.id]
+    };
+
+    this.setState({ activeItem });
+
+    this.handleSubmit(this.state.activeItem);
+
+    this.setState({ player_name_list: [...this.state.player_name_list, item.player_name] });
+  }
 
   render() {
     const { toggle, onSave } = this.props;
@@ -125,17 +131,21 @@ export default class RosterModal extends Component {
           </Form>
           <div>
             <p>Players</p>
-            {this.renderNames()}
+            {this.state.player_name_list.map((item) => (
+              <li> {item} </li>
+            ))}
           </div>
-          <Dropdown>
+          <br></br>
+          <Label for="player-list">Add player</Label>
+          <Dropdown id="player-list">
             <Dropdown.Toggle id="dropdown-basic">
-              Team 1: {this.state.team1}
+              New Player
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
               {this.state.playerList.map((item) => (
                 <Dropdown.Item
-                onSelect={this. .bind(this, item.player_name, item.id)}>
+                onSelect={this.new_player.bind(this, item)}>
                 {item.player_name}</Dropdown.Item>
               ))}
             </Dropdown.Menu>
