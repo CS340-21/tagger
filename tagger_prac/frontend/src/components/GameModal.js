@@ -9,9 +9,6 @@ import {
   ModalBody,
   ModalFooter,
   Form,
-  FormGroup,
-  Input,
-  Label,
 } from "reactstrap";
 
 export default class RosterModal extends Component {
@@ -65,7 +62,7 @@ export default class RosterModal extends Component {
         <ModalBody>
           <Form>
             <Dropdown>
-              <Dropdown.Toggle variant="success" id="dropdown-basic">
+              <Dropdown.Toggle id="dropdown-basic">
               Team 1: {this.state.team1}
               </Dropdown.Toggle>
 
@@ -78,9 +75,8 @@ export default class RosterModal extends Component {
               </Dropdown.Menu>
             </Dropdown>
 
-            <Dropdown
-              onSelect={this.handleTeam2}>
-              <Dropdown.Toggle variant="success" id="dropdown-basic">
+            <Dropdown>
+              <Dropdown.Toggle id="dropdown-basic">
               Team 2: {this.state.team2}
               </Dropdown.Toggle>
 

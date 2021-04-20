@@ -127,6 +127,19 @@ export default class RosterModal extends Component {
             <p>Players</p>
             {this.renderNames()}
           </div>
+          <Dropdown>
+            <Dropdown.Toggle id="dropdown-basic">
+              Team 1: {this.state.team1}
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              {this.state.playerList.map((item) => (
+                <Dropdown.Item
+                onSelect={this. .bind(this, item.player_name, item.id)}>
+                {item.player_name}</Dropdown.Item>
+              ))}
+            </Dropdown.Menu>
+          </Dropdown>
         </ModalBody>
         <ModalFooter>
           <Button

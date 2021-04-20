@@ -87,7 +87,7 @@ class create_player(CreateView):
 
 class player_form(forms.Form):
     form_player_name = forms.CharField(label='Player Name', max_length=50)
-    form_player_height = forms.IntegerField(label='Height')
+    form_player_number = forms.IntegerField(label='Number')
 
 def add_player(request, roster_id):
     roster = get_object_or_404(Roster, pk=roster_id)
@@ -97,10 +97,11 @@ def add_player(request, roster_id):
         form = player_form(request.POST)
         # check whether it's valid:
         if form.is_valid():
-            new_player = Player(player_name=form.cleaned_data['form_player_name'], player_height=form.cleaned_data['form_player_height'])
+            new_player = Player(player_name=form.cleaned_data['form_player_name'], player_number=form.cleaned_data['form_player_number'])
             new_player.save()
             print("worked\n")
             roster.player_set.add(new_player)
+            new_player.roster_set.add(roster)
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
@@ -113,7 +114,7 @@ def add_player(request, roster_id):
     return render(request, 'player_form.html', {'form': form})
 
 
-# form for startin a new game
+# form for starting a new game
 class game_form(forms.Form):
     form_game_title = forms.CharField(label='Game Title', max_length=200)
 

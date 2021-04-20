@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios"
 
 
 import {
@@ -17,8 +18,30 @@ export default class PlayerModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      rosterList: [],
       activeItem: this.props.activeItem,
     };
+  }
+
+  componentDidMount() {
+    this.state.activeItem.roster_set.map((r) => (
+      this.getRosterName(r)
+    ));
+  }
+
+  // updates the rosterList to be rendered
+  getRosterName = (r) => {
+    axios
+      .get(`/tagger/api/rosters/${r}`)
+      .then((res) => this.setState({ rosterList: [...this.state.rosterList, res.data.roster_name] }));
+  };
+
+  renderNames = () => {
+    const namesList = this.state.rosterList;
+
+    return namesList.map((name) => (
+      <li>{name}</li>
+    ));
   }
 
   handleChange = (e) => {
@@ -66,7 +89,7 @@ export default class PlayerModal extends Component {
           </Form>
           <div>
             <p>Rosters</p>
-            {this.state.activeItem.roster}
+            {this.renderNames()}
           </div>
         </ModalBody>
         <ModalFooter>

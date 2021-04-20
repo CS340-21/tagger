@@ -14,7 +14,7 @@ class RosterSerializer(serializers.ModelSerializer):
 class PlayerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Player
-        fields = ('id', 'player_name', 'player_number', 'roster', 'player_throwing_handedness', 'player_batting_handedness')
+        fields = ('id', 'player_name', 'player_number', 'roster_set', 'player_throwing_handedness', 'player_batting_handedness')
 
 class GameSerializer(serializers.ModelSerializer):
     class Meta:

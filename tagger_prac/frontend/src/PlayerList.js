@@ -12,7 +12,7 @@ class PlayerList extends Component {
       activeItem: {
         player_name: "",
         player_number: "",
-        roster: "",
+        roster_set: [],
       },
     };
   }
@@ -53,7 +53,7 @@ class PlayerList extends Component {
   };
 
   createItem = () => {
-    const item = { player_name: "", player_number: "", roster: "", };
+    const item = { player_name: "", player_number: "", roster_set: [], };
 
     this.setState({ activeItem: item, modal: !this.state.modal });
   };
