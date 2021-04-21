@@ -19,7 +19,7 @@ class PlayerSerializer(serializers.ModelSerializer):
 class GameSerializer(serializers.ModelSerializer):
     class Meta:
         model = Game
-        fields = ('game_title', 'team1', 'team2', 'start_time', 'date')
+        fields = ('id', 'game_title', 'team1', 'team2', 'start_time', 'date')
 
 class AtBatSerializer(serializers.ModelSerializer):
     class Meta:
