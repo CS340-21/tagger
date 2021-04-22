@@ -19,7 +19,7 @@ class PlayerSerializer(serializers.ModelSerializer):
 class GameSerializer(serializers.ModelSerializer):
     class Meta:
         model = Game
-        fields = ('id', 'game_title', 'team1', 'team2', 'start_time', 'date')
+        fields = ('id', 'game_title', 'team1', 'team2', 'start_time', 'date', 'pitch_set')
 
 class AtBatSerializer(serializers.ModelSerializer):
     class Meta:
@@ -34,4 +34,4 @@ class InningSerializer(serializers.ModelSerializer):
 class PitchSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pitch
-        fields = ('pitch_type', 'pitch_call', 'pitcher', 'batter', 'pitch_number', 'atBat')
+        fields = ('pitch_type', 'pitch_call', 'pitch_number', 'game')

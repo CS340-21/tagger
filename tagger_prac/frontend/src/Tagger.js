@@ -42,25 +42,47 @@ class Tagging extends Component{
   constructor(props) {
     super(props);
     this.state = {
+      gameList: [],
       pitchList: [],
+      game_title: "",
+
       modal: false,
-      activeItem: {
-        pitch_type: "",
-        pitch_call: "",
-        pitcher: "",
-        batter: "",
-        pitch_number: "",
-        atBat: "",
-      },
+      activeItem: this.props.activeItem,
     };
   }
+
+  get_recent = () => {
+    this.state.id = this.state.gameList[this.state.gameList.length-1].id;
+  }
+
+  componentDidMount(){
+    this.get_game();
+    this.refreshList();
+  };
 
   refreshList = () => {
     axios
       .get("/tagger/api/pitch/")
       .then((res) => this.setState({ pitchList: res.data }))
       .catch((err) => console.log(err));
+
+    console.log(this.state.pitchList);
   };
+
+  get_game = () => {
+    axios
+      .get("/tagger/api/game/")
+      .then((res) => this.setState({ gameList: res.data }))
+      .catch((err) => console.log(err));
+
+  /*  this.state.gameList.map((item) => (
+      this.setState({game_title: item.game_title})
+    ));
+*/
+    //this.get_recent();
+    //console.log(this.state.gameList);
+    //this.state.game_title = this.state.gameList[this.state.gameList.length-1].game_title;
+  }
 
   handleSubmit = (item) => {
     //this.toggle();

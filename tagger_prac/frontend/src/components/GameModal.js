@@ -38,38 +38,37 @@ export default class GameModal extends Component {
   };
 
   handleTeam1 = (team_name, id) => {
-    const item = { game_title: "asdf",
+    const activeItem = { ...this.state.activeItem,
+                    game_title: "asdf",
                     team1: id,
                     team2: this.state.activeItem.team2};
 
     this.setState({team1_set: 1});
     this.setState({team1: team_name});
 
-    /*if(this.team1_set && this.team2_set){
-      item.game_title = this.state.activeItem.team1 + " vs. " + this.state.activeItem.team2;
-      console.log(item.game_title);
-    }*/
+    //set the game_title
+    if(activeItem.team1 > 0 && activeItem.team2 > 0){
+      activeItem.game_title = `${team_name} vs. ${this.state.team2}`;
+    }
 
-    this.setState({activeItem: item})
+    this.setState({activeItem})
   }
 
   handleTeam2 = (team_name, id) => {
-    const item = { game_title: "asdf",
+    const activeItem = { ...this.state.activeItem,
+                    game_title: "asdf",
                     team1: this.state.activeItem.team1,
                     team2: id};
 
-                    this.setState({team2_set: 1});
-                    this.setState({team2: team_name});
+    this.setState({team2_set: 1});
+    this.setState({team2: team_name});
 
-    if(item.team1 > 0 && item.team2 > 0){
-      item.game_title = this.state.team1 + " vs. ";
-      //item.game_title += this.state.team2;
-      console.log(item.game_title);
-      console.log(this.state.team2);
-      console.log(team_name);
+    //set the game title
+    if(activeItem.team1 > 0 && activeItem.team2 > 0){
+      activeItem.game_title = `${this.state.team1} vs. ${team_name}`;
     }
 
-    this.setState({activeItem: item})
+    this.setState({ activeItem })
   }
 
   render() {
@@ -111,6 +110,7 @@ export default class GameModal extends Component {
         </ModalBody>
         <ModalFooter>
           <Button
+            href="/tagger"
             color="success"
             onClick={() => onSave(this.state.activeItem)}
           >

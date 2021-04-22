@@ -42,12 +42,14 @@ class CreateGame extends Component {
     if (item.id) {
       axios
         .put(`/tagger/api/game/${item.id}/`, item)
-        .then((res) => this.refreshList());
+        .then((res) => this.refreshList())
+        .catch((err) => console.log(err));
       return;
     }
     axios
       .post(`/tagger/api/game/`, item)
-      .then((res) => this.refreshList());
+      .then((res) => this.refreshList())
+      .catch((err) => console.log(err));
   };
 
   render(){

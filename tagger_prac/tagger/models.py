@@ -55,10 +55,8 @@ class AtBat(models.Model):
 class Pitch(models.Model):
     pitch_type = models.CharField(max_length=200)
     pitch_call = models.CharField(max_length=200)
-    pitcher = models.ForeignKey(Player, on_delete=models.CASCADE, null=True, related_name='pitcher')
-    batter = models.ForeignKey(Player, on_delete=models.CASCADE, null=True, related_name='batter')
     pitch_number = models.IntegerField()
-    atBat = models.ForeignKey(AtBat, on_delete=models.CASCADE, null=True)
+    game = models.ForeignKey(Game, on_delete=models.CASCADE, null=True)
 
     def get_absolute_url(self):
         return reverse('tagger:pitch_details', kwargs={'pk': self.pk})
