@@ -6,11 +6,27 @@ import icon from './Yellow_icon.svg'
 import './Tagger.css';
 
 class Tagger extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      gameList: [],
+      pitchList: [],
+      game_title: "",
+      id: [],
+      modal: false,
+      activeItem: this.props.activeItem,
+    };
+  }
+
+  componentDidMount(){
+    //this.setState({ game_title: this.state.activeItem.game_title });
+  };
+
   render(){
     return (
       <div class="App fullheight" id="tagginginterface">
         <header>
-          <span class="gameTitle">Game Title</span> <span class="date">Current date</span>
+          <span class="gameTitle">{this.state.game_title}</span> <span class="date">Date</span>
         </header>
         <div class="Content fullheight">
           <div class="lineup fullheight">

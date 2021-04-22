@@ -110,7 +110,7 @@ export default class GameModal extends Component {
         </ModalBody>
         <ModalFooter>
           <Button
-            href="/tagger"
+            //href="/tagger"
             color="success"
             onClick={() => onSave(this.state.activeItem)}
           >

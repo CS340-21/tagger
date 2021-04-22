@@ -3,6 +3,7 @@ import GameModal from "./components/GameModal";
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Tagger from "./Tagger"
 
 class CreateGame extends Component {
   constructor(props) {
@@ -85,8 +86,13 @@ class CreateGame extends Component {
             onSave={this.handleSubmit}
           />
         ) : null}
-      </div>
 
+      <div>
+        <Tagger 
+          activeItem={this.state.activeItem}
+        />
+      </div>
+    </div>
     );
   }
 }
