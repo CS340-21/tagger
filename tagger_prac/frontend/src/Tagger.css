@@ -42,9 +42,6 @@ header * {
   border-left: 1px solid black;
   border-right: 1px solid black;
   color: white;
-  background-image: url('field\ image.jpeg');
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 .stats {
@@ -53,9 +50,24 @@ header * {
 }
 
 #tagUpper {
+  /*background-image: url('Baseball_diamond_clean.svg');*/
+  background-size: contain;
+  background-repeat: no-repeat;
   height: 85%;
 }
 
 #tagLower {
   height: 15%;
+}
+
+#taggingimage {
+  /*position: relative;*/
+  width: 100%;
+  z-index: -1;
+}
+
+.taggingbutton {
+  width: 2%;
+  left: 49%;
+  z-index: 1;
 }

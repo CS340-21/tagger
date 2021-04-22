@@ -1,13 +1,14 @@
 import Button from 'react-bootstrap/Button';
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import baseballField from './Baseball_diamond_clean.svg'
+import icon from './Yellow_icon.svg'
 import './Tagger.css';
 
 class Tagger extends Component {
   render(){
     return (
-      <div class="App fullheight">
+      <div class="App fullheight" id="tagginginterface">
         <header>
           <span class="gameTitle">Game Title</span> <span class="date">Current date</span>
         </header>
@@ -18,9 +19,11 @@ class Tagger extends Component {
           <div class="tagging fullheight">
             <Tagging />
           </div>
+          {/*
           <div class="stats fullheight">
             <Stats />
           </div>
+          */}
         </div>
       </div>
     );
@@ -86,7 +89,9 @@ class Tagging extends Component{
   render(){
     return(
       <div class="taggingwrapper fullheight">
-        <div id="tagUpper"></div>
+        <div id="tagUpper">
+          <img src={baseballField} id="taggingimage" alt="If you see this, reload the page"/>
+        </div>
         <div id="taglower">
           <Button
             className="create_ball"
