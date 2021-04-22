@@ -41,7 +41,7 @@ class CreateGame extends Component {
     return;
   }
 
-  handleSubmit = (item) => {
+  handleSubmit = async(item) => {
     this.toggle();
 
     if (item.id) {
@@ -51,12 +51,16 @@ class CreateGame extends Component {
         .catch((err) => console.log(err));
       return;
     }
-    axios
+    /*axios
       .post(`/tagger/api/game/`, item)
       .then((res) => this.refreshList())
-      .catch((err) => console.log(err));
-
-
+      .catch((err) => console.log(err));*/
+    const res = await axios.post(`/tagger/api/game/`, item);
+    const activeItem = { ...this.state.activeItem,
+                          id: res.data.id};
+    this.setState({activeItem});
+    console.log(this.state.activeItem.id);
+    this.render();
     //push the redirect
 
   };
@@ -88,7 +92,7 @@ class CreateGame extends Component {
         ) : null}
 
       <div>
-        <Tagger 
+        <Tagger
           activeItem={this.state.activeItem}
         />
       </div>

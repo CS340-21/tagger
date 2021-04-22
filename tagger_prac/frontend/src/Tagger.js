@@ -20,6 +20,7 @@ class Tagger extends Component {
 
   componentDidMount(){
     //this.setState({ game_title: this.state.activeItem.game_title });
+    console.log(this.state.activeItem.game_title);
   };
 
   render(){
@@ -33,7 +34,8 @@ class Tagger extends Component {
             <Lineup />
           </div>
           <div class="tagging fullheight">
-            <Tagging />
+            <Tagging
+            activeItem = {this.state.activeItem}/>
           </div>
           {/*
           <div class="stats fullheight">
@@ -123,6 +125,8 @@ class Tagging extends Component{
   createBall = () => {
     const item = { pitch_type: "ball",
                     pitch_call: "2",
+                    pitch_number: 5,
+                    game: 1
                     };
 
     this.setState({ activeItem: item, modal: !this.state.modal });
