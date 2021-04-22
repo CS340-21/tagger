@@ -10,6 +10,7 @@ class RosterList extends Component {
       rosterList: [],
       modal: false,
       activeItem: {
+        id: 0,
         roster_name: "",
         num_players: "",
         player_set: [],
@@ -39,11 +40,21 @@ class RosterList extends Component {
       axios
         .put(`/tagger/api/rosters/${item.id}/`, item)
         .then((res) => this.refreshList());
+
+      /*this.setState({ id: item.id });
+      item.player_set.map((p) => (
+        p.roster_set.concat(item.id)
+      ));*/
       return;
     }
     axios
       .post(`/tagger/api/rosters/`, item)
       .then((res) => this.refreshList());
+
+    /*this.setState({ id: item.id });
+    item.player_set.map((p) => (
+      p.roster_set.concat(item.id)
+    ));*/
   };
 
   handleDelete = (item) => {

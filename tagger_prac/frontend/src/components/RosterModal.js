@@ -61,17 +61,17 @@ export default class RosterModal extends Component {
     ));
   }*/
 
-  handleSubmit = (item) => {
+  /*handleSubmit = (item) => {
     if (item.id) {
       axios
-        .put(`/tagger/api/player/${item.id}/`, item)
+        .put(`/tagger/api/rosters/${item.id}/`, item)
         .then((res) => this.refreshList());
       return;
     }
     axios
-      .post(`/tagger/api/player/`, item)
+      .post(`/tagger/api/rosters/`, item)
       .then((res) => this.refreshList());
-  };
+  };*/
 
   handleChange = (e) => {
     let { name, value } = e.target;
@@ -93,7 +93,7 @@ export default class RosterModal extends Component {
 
     this.setState({ activeItem });
 
-    this.handleSubmit(this.state.activeItem);
+    //this.handleSubmit(this.state.activeItem);
 
     this.setState({ player_name_list: [...this.state.player_name_list, item.player_name] });
   }
