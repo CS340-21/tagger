@@ -45,7 +45,7 @@ class Tagging extends Component{
       gameList: [],
       pitchList: [],
       game_title: "",
-
+      id: [],
       modal: false,
       activeItem: this.props.activeItem,
     };
@@ -66,7 +66,7 @@ class Tagging extends Component{
       .then((res) => this.setState({ pitchList: res.data }))
       .catch((err) => console.log(err));
 
-    console.log(this.state.pitchList);
+    //console.log(this.state.pitchList);
   };
 
   get_game = () => {
@@ -75,13 +75,19 @@ class Tagging extends Component{
       .then((res) => this.setState({ gameList: res.data }))
       .catch((err) => console.log(err));
 
-  /*  this.state.gameList.map((item) => (
-      this.setState({game_title: item.game_title})
+    this.state.gameList.map((g) => (
+      this.get_game_fields(g.id)
     ));
-*/
+
     //this.get_recent();
     //console.log(this.state.gameList);
     //this.state.game_title = this.state.gameList[this.state.gameList.length-1].game_title;
+  }
+
+  get_game_fields = (g) => {
+    axios
+      .get(`/tagger/api/game/${g}`)
+      .then((res) => console.log(res.data));
   }
 
   handleSubmit = (item) => {
@@ -119,6 +125,7 @@ class Tagging extends Component{
             className="create_ball"
             onClick={this.createBall}
           >
+            {this.state.game_title}
             Ball
           </Button>
           {' '}

@@ -11,7 +11,11 @@ class CreateGame extends Component {
       gameList: [],
       modal: false,
       activeItem: {
+        id: 0,
         game_title: "",
+        team1: 0,
+        team2: 0,
+        pitch_set: []
       },
     };
   }
@@ -50,6 +54,10 @@ class CreateGame extends Component {
       .post(`/tagger/api/game/`, item)
       .then((res) => this.refreshList())
       .catch((err) => console.log(err));
+
+
+    //push the redirect
+
   };
 
   render(){
