@@ -5,7 +5,11 @@ Team members
   - Sam Baumann, Rob Bray, Brandan Roachell, Taylor Rogers
 
 # Introduction
-This project is a scorekeeping application for baseball coaches. The main taggers currently competing on the market both have the same limited flexibility. This project idea is not novel, but it fills the need of the market by introducing more flexibility within the app that competitors lack, such as splitting rosters. It resembles iScore and GameChanger, two widely used scorekeeping apps for multiple sports, including baseball. This app will be different as it will focus on baseball and provide options for tagging intrasquad scrimmages.
+This project is a scorekeeping application for baseball coaches. The main taggers currently competing on the market both have the same limited flexibility. This project idea is not novel, but it fills the need of the market by introducing more flexibility within the app that competitors lack, such as splitting rosters. It resembles iScore and GameChanger, two widely used scorekeeping apps for multiple sports, including baseball. Our focus for the app was to differentiate it from existing options on the market by filling needs that existing options do not fulfill, such as supporting intrasquad scrimmages. 
+
+For a flexible application that can work on many different devices, we chose to create a web app, using Django for the backend and react for the frontend. Only one of us had used either of these technologies before, so there was a bit of a learning curve, but once we all felt comfortable with the technologies, we created the backend models, then the frontend.
+
+We did not accomplish all of our goals for this project. Between learning the technologies and creating the backend, not much time was left to work on the frontend, especially the tagging interface. While we did not meet all of our goals, we still feel like this project was a success because we learned a lot.
 
 # Customer value
 There were no changes regarding customer value from our project proposal.
