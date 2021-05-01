@@ -22,7 +22,7 @@ There were no changes to our system architecture from our initial plan.
 ![image](https://github.com/CS340-21/tagger/blob/master/Screenshot_20210211_144540.png?raw=true)
 
 ### Tools for Building
-We used Django, a Python-based web framework, because a web application allows it to be more portable. We used Django's built-in SQLite database for rosters, players, games, and other tagging data, as well as Django's REST API for quicker access to . In addition to this, we used the React JavaScript library in our front-end for dynamic elements such as lists pulled from the database.
+We used Django, a Python-based web framework, because a web application allows it to be more portable. We used Django's built-in SQLite database for rosters, players, games, and other tagging data, as well as Django's REST API for easier access to the information contained in the stored objects for the front-end. In addition to this, we used the React JavaScript library in our front-end for dynamic elements such as lists pulled from the API using axios.
 
 ### What Works and What Doesn't?
 We were able to load lists of rosters and players from the database and render their details in modals using React. Here is an example of two rosters, each with a list of associated players:  
